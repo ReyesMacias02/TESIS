@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardsController;
+use App\Http\Controllers\QuizsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +32,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardsController::class, 'index'])->name('dashboard');
+    Route::resource('dashboards', DashboardsController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('quiz', QuizsController::class);
+    Route::get('/users/folleto', function () {
+        return view('folleto');
+    });
+    Route::post('/users/store_folleto', [UserController::class, 'store_folleto'])->name('users.store_folleto');
+
 });
