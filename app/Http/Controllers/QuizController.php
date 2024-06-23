@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnswerDetails;
 use App\Models\Quiz;
 use App\Models\UserHeaderResponses;
-use App\Models\AnswerDetails;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -66,7 +67,7 @@ class QuizController extends Controller
     {
         $registros = Quiz::all();
         $json_data = [
-            "data" => $registros->map(function($value) {
+            "data" => $registros->map(function ($value) {
                 return $this->Modelo($value);
             }),
         ];
@@ -76,5 +77,37 @@ class QuizController extends Controller
         $json_encoded = str_replace('\/', '/', $json_encoded);
 
         return response()->json(json_decode($json_encoded, true));
+    }
+    public function crudquiz(Request $request)
+    {
+        // Validar los datos recibidos
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'url' => 'required|string|max:255',
+            'tiempo' => 'required|integer', // Asumiendo que tiempo será un número entero
+        ]);
+
+// Calcular la fecha de inicio y fin según el tiempo seleccionado
+        $now = Carbon::now();
+        $startTime = $now->toDateTimeString(); // Hora actual
+
+// Calcular el tiempo de finalización
+        $endTime = $now->addMinutes($validatedData['tiempo'])->toDateTimeString();
+
+// Crear el registro del quiz
+        $quiz = Quiz::create([
+            'name' => $validatedData['name'],
+            'descripcion' => $validatedData['url'],
+            'desde' => $startTime,
+            'hasta' => $endTime,
+        ]);
+
+// Devolver una respuesta
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Quiz registrado exitosamente',
+            'quiz' => $quiz,
+        ], 201);
+
     }
 }

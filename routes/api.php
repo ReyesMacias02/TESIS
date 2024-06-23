@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RecursoController; // Asegúrate de importar RecursoController
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +16,13 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
-
-Route::get('/user', function (Request $request) {
-    return "loo";
-});
+Route::post('/user', [UserController::class, 'login']);
+Route::post('/register', [UserController::class, 'register']);
 Route::get('/toda', function (Request $request) {
     return "hola";
 });
 Route::get('/quiz', [QuizController::class, 'quiz_ajax']);
+Route::post('/crudquiz', [QuizController::class, 'crudquiz']);
 Route::get('/quiz/{id}', [QuizController::class, 'detalle_quiz']);
 Route::post('/quiz/responses', [QuizController::class, 'store']);
 
