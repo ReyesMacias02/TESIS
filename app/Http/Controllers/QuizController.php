@@ -100,6 +100,7 @@ class QuizController extends Controller
             'descripcion' => $validatedData['url'],
             'desde' => $startTime,
             'hasta' => $endTime,
+            'estado' => 1,
         ]);
 
 // Devolver una respuesta

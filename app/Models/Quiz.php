@@ -8,7 +8,7 @@ class Quiz extends Model
 {
 
     protected $table = 'Quiz';
-    protected $fillable = ['name', 'descripcion', 'desde', 'hasta'];
+    protected $fillable = ['name', 'descripcion', 'desde', 'hasta', 'estado'];
 
     public function pregunta()
     {
