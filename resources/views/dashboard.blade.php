@@ -163,10 +163,10 @@
 
 
 
-    <!-- cards row 4 -->
-
-    <div class="flex flex-wrap my-6 -mx-3">
-        <!-- card 1 -->
+    <!-- cards row 4
+                
+                    <div class="flex flex-wrap my-6 -mx-3">
+              
 
         <div class="w-full max-w-full px-3 mt-0 mb-6 md:mb-0 md:w-2/2 md:flex-none lg:w-3/3 lg:flex-none">
             <div
@@ -307,8 +307,7 @@
                                                     <span class="text-xs font-semibold leading-tight">60%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-blue-600 to-cyan-400 -mt-0.38 -ml-px flex h-1.5 w-3/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="60" aria-valuemin="0"
                                                     aria-valuemax="100"></div>
@@ -370,8 +369,7 @@
                                                     <span class="text-xs font-semibold leading-tight">10%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-blue-600 to-cyan-400 -mt-0.38 w-1/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="10" aria-valuemin="0"
                                                     aria-valuemax="100"></div>
@@ -434,8 +432,7 @@
                                                     <span class="text-xs font-semibold leading-tight">100%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-green-600 to-lime-400 -mt-0.38 -ml-px flex h-1.5 w-full flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="100" aria-valuemin="0"
                                                     aria-valuemax="100"></div>
@@ -524,8 +521,7 @@
                                                     <span class="text-xs font-semibold leading-tight">100%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-green-600 to-lime-400 -mt-0.38 -ml-px flex h-1.5 w-full flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="100" aria-valuemin="0"
                                                     aria-valuemax="100"></div>
@@ -575,8 +571,7 @@
                                                     <span class="text-xs font-semibold leading-tight">25%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-blue-600 to-cyan-400 -mt-0.38 -ml-px flex h-1.5 w-1/4 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="25"></div>
@@ -639,8 +634,7 @@
                                                     <span class="text-xs font-semibold leading-tight">40%</span>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
                                                 <div class="duration-600 ease-soft bg-gradient-to-tl from-blue-600 to-cyan-400 -mt-0.38 -ml-px flex h-1.5 w-2/5 flex-col justify-center overflow-hidden whitespace-nowrap rounded bg-fuchsia-500 text-center text-white transition-all"
                                                     role="progressbar" aria-valuenow="40" aria-valuemin="0"
                                                     aria-valuemax="40"></div>
@@ -656,5 +650,8 @@
         </div>
 
 
-    </div>
+        </div>
+        -->
+
+
 @endsection

@@ -84,11 +84,21 @@
 
                                 @auth
 
-                                    <a href="{{ route('profile.show') }}"
-                                        class="block px-0 py-2 text-sm font-semibold transition-all ease-nav-brand text-slate-500">
+                                    <a href="{{ route('profile.show') }}" style="    margin-right: 22px;"
+                                        class="inline-block w-full px-6 py-3 mb-4 text-xs font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer leading-pro ease-soft-in hover:shadow-soft-xs hover:scale-102 active:opacity-85 tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800">
                                         <i class="fa fa-user sm:mr-1"></i>
                                         <span class="hidden sm:inline">Perfil</span>
                                     </a>
+
+                                    {!! Form::open(['route' => 'logout', 'method' => 'POST']) !!}
+
+                                    {!! Form::submit('Cerrar  Session', [
+                                        'style' => '    margin-right: 22px;',
+                                    
+                                        'class' =>
+                                            'inline-block w-full px-6 py-3 mb-4 text-xs font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer leading-pro ease-soft-in hover:shadow-soft-xs hover:scale-102 active:opacity-85 tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-red-900 to-red-800',
+                                    ]) !!}
+                                    {!! Form::close() !!}
                                 @else
                                     <a href="{{ route('login') }}"
                                         class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>

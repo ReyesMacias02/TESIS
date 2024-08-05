@@ -27,6 +27,7 @@ Route::get('/clear', function () {
     Artisan::call('config:cache');
     return "all cleared ...";
 });
+Route::get('/migrar', [UserController::class, 'migrar'])->name('migrar');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware([
@@ -35,6 +36,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [DashboardsController::class, 'index'])->name('dashboard');
+
     Route::resource('dashboards', DashboardsController::class);
     Route::resource('users', UserController::class);
     Route::resource('quiz', QuizsController::class);

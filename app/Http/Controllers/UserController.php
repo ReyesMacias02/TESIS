@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recurso;
 use App\Models\User;
+use App\Models\Usuario;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,6 +16,35 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+    public function migrar()
+    {
+        // dd("lleof");
+        $viejo = Usuario::all();
+        // dd($viejo);
+
+        foreach ($viejo as $key) {
+            $existingUser = User::where('usuario', $key->usuario)
+                ->orWhere('email', $key->correo)
+                ->orWhere('celular', $key->celular)
+                ->first();
+            if (!$existingUser) {
+                $user = User::create([
+                    'usuario' => $key->usuario,
+                    'name' => $key->usuario,
+                    'password' => Hash::make($key->password),
+                    'email' => $key->correo,
+                    'celular' => $key->celular,
+                    'rol_id' => 2,
+                ]);
+            }
+
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Usuario registrado exitosamente',
+
+        ], 201);
+    }
     public function index()
     {
         $users = User::all();
