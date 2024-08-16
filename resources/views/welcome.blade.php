@@ -419,6 +419,13 @@
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                 <img src=" {{ asset('assets/img/logo-ct.png') }}" class="h-16 w-auto text-gray-700 sm:h-20"
                     alt="main_logo" />
+                <a href="{{ config('app.apk_url') }}">
+                    <img src=" {{ asset('assets/img/google-play-badge.png') }}"
+                        class="h-16 w-auto text-gray-700 sm:h-20" alt="main_logo" />
+
+
+                </a>
+
             </div>
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
