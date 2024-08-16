@@ -42,7 +42,7 @@ return [
      */
 
     'debug' => (bool) env('APP_DEBUG', false),
-    'apk_url' => (bool) env('APK_URL', false),
+    'apk_url' => (bool) env('APK_URL', 'https://gitlab.com/jjrm1351828189/apk_artechcomputer/-/blob/main/ArtechCompunter.apk?ref_type=heads'),
 
     /*
     |--------------------------------------------------------------------------
