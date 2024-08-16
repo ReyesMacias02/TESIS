@@ -42,6 +42,7 @@ return [
      */
 
     'debug' => (bool) env('APP_DEBUG', false),
+    'apk_url' => (bool) env('APK_URL', false),
 
     /*
     |--------------------------------------------------------------------------

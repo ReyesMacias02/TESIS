@@ -65,7 +65,8 @@ class QuizController extends Controller
 
     public function quiz_ajax()
     {
-        $registros = Quiz::all();
+        $registros = Quiz::where('hasta', '>=', Carbon::now())->
+            where('estado', 1)->get();
         $json_data = [
             "data" => $registros->map(function ($value) {
                 return $this->Modelo($value);
