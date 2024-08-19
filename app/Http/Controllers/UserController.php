@@ -24,25 +24,12 @@ class UserController extends Controller
         //  dd($viejo);
 
         foreach ($usuarios as $key) {
-            $existingUser = User::where('usuario', $key->usuario)
-                ->orWhere('email', $key->correo)
-                ->orWhere('celular', $key->celular)
-                ->first();
-            if (!$existingUser) {
-                $user = User::create([
-                    'usuario' => $key->usuario,
-                    'name' => $key->usuario,
-                    'password' => Hash::make($key->password),
-                    'email' => 'e' . $key->correo,
-                    'celular' => $key->celular,
-                    'rol_id' => 2,
-                ]);
-            }
+
             $user = User::create([
                 'usuario' => $key->usuario,
                 'name' => $key->usuario,
                 'password' => Hash::make($key->password),
-                'email' => $key->correo,
+                'email' => 'e' . $key->correo,
                 'celular' => $key->celular,
                 'rol_id' => 2,
             ]);
