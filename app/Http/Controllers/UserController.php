@@ -19,21 +19,21 @@ class UserController extends Controller
     public function migrar()
     {
         // dd("lleof");
-        $usuarios = Usuario::take(18)->get();
+        $usuarios = Usuario::take(10)->get();
 
         //  dd($viejo);
-
+        $cont = 0;
         foreach ($usuarios as $key) {
 
             $user = User::create([
                 'usuario' => $key->usuario,
                 'name' => $key->usuario,
                 'password' => Hash::make($key->password),
-                'email' => 'e123456789@gmail.com',
+                'email' => 'e' . $cont . '123456789@gmail.com',
                 'celular' => $key->celular,
                 'rol_id' => 2,
             ]);
-
+            $cont++;
         }
         return response()->json([
             'status' => 'success',
