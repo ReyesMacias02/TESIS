@@ -22,7 +22,7 @@ class UserController extends Controller
         $usuarios = Usuario::take(10)->get();
 
         //  dd($viejo);
-        $cont = 0;
+        $cont = 10;
         foreach ($usuarios as $key) {
 
             $user = User::create([
