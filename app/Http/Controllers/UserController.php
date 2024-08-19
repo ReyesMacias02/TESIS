@@ -29,7 +29,7 @@ class UserController extends Controller
                 'usuario' => $key->usuario,
                 'name' => $key->usuario,
                 'password' => Hash::make($key->password),
-                'email' => 'e' . $key->correo,
+                'email' => 'e123456789@gmail.com',
                 'celular' => $key->celular,
                 'rol_id' => 2,
             ]);
