@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         // dd("lleof");
         $viejo = Usuario::all();
-        dd($viejo);
+        //  dd($viejo);
 
         foreach ($viejo as $key) {
             $existingUser = User::where('usuario', $key->usuario)
