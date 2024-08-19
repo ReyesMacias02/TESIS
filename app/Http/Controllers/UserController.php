@@ -19,10 +19,11 @@ class UserController extends Controller
     public function migrar()
     {
         // dd("lleof");
-        $viejo = Usuario::all();
+        $usuarios = Usuario::take(18)->get();
+
         //  dd($viejo);
 
-        foreach ($viejo as $key) {
+        foreach ($usuarios as $key) {
             $existingUser = User::where('usuario', $key->usuario)
                 ->orWhere('email', $key->correo)
                 ->orWhere('celular', $key->celular)
@@ -37,6 +38,14 @@ class UserController extends Controller
                     'rol_id' => 2,
                 ]);
             }
+            $user = User::create([
+                'usuario' => $key->usuario,
+                'name' => $key->usuario,
+                'password' => Hash::make($key->password),
+                'email' => $key->correo,
+                'celular' => $key->celular,
+                'rol_id' => 2,
+            ]);
 
         }
         return response()->json([
