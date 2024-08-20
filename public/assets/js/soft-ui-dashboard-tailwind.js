@@ -47,7 +47,7 @@ if (document.querySelector("[dropdown-trigger]")) {
 }
 
 if (document.querySelector("[fixed-plugin]")) {
-  loadJS(to_build + "assets/js/fixed-plugin.js", true);
+  //loadJS(to_build + "assets/js/fixed-plugin.js", true);
 }
 
 if (document.querySelector("[navbar-main]")) {
