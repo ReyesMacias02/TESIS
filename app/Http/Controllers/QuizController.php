@@ -29,6 +29,7 @@ class QuizController extends Controller
 
     public function store(Request $request)
     {
+       // dd($request);
         try {
             $this->validate($request, [
                 'user_id' => 'required',

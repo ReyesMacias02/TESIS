@@ -29,7 +29,7 @@ class QuizsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required',
+            'descripcion' => 'required',
         ]);
         $quiz = new Quiz();
         $quiz->descripcion = $request->descripcion;
